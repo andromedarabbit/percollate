@@ -109,6 +109,7 @@ Options to disable features:
   --no-toc           Don't generate a table of contents.
   --no-cover         Don't generate a cover.
   --no-hyphenate     Disable hyphenation.
+  --no-stealth       Disable stealth mode.
 
 PDF options: 
 

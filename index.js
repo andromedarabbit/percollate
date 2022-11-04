@@ -1,4 +1,5 @@
-import pup from 'puppeteer';
+import pup from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import archiver from 'archiver';
 import fetch from 'node-fetch';
 import { JSDOM } from 'jsdom';
@@ -97,6 +98,10 @@ function launch(options, size) {
 	 */
 	if (options.sandbox === false) {
 		args = args.concat(['--no-sandbox', '--disable-setuid-sandbox']);
+	}
+
+	if (options.stealth !== false) {
+		pup.use(StealthPlugin());
 	}
 
 	return pup.launch({
